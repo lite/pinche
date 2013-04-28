@@ -41,7 +41,7 @@ app.listen(port, function(){
 app.enable('trust proxy');
 
 // 当然，如果你的服务器允许，你也可以直接用 node 来 serve 80 端口
-// app.listen(80);
+app.listen(80);
 
 if(!process.env.DEBUG){
   console.log("set env variable `DEBUG=webot-example:*` to display debug info.");
