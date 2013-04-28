@@ -9,7 +9,7 @@ var _ = require('underscore')._;
 var search = require('./support').search;
 var geo2loc = require('./support').geo2loc;
 
-var host = 'http://42.96.159.189:5000';
+var host = 'http://42.96.159.189';
 
 /**
  * 初始化路由规则

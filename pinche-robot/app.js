@@ -8,7 +8,7 @@ var verbose = require('debug')('webot-example:verbose');
 var app = express();
 
 // 实际使用时，这里填写你在微信公共平台后台填写的 token
-var wx_token = process.env.WX_TOKEN || 'duan0801';
+var wx_token = process.env.WX_TOKEN || 's1cr1t';
 
 // remove this test code in production environment
 try {
@@ -41,7 +41,7 @@ app.listen(port, function(){
 app.enable('trust proxy');
 
 // 当然，如果你的服务器允许，你也可以直接用 node 来 serve 80 端口
-app.listen(80);
+// app.listen(80);
 
 if(!process.env.DEBUG){
   console.log("set env variable `DEBUG=webot-example:*` to display debug info.");
