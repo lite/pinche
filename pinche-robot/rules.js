@@ -31,7 +31,7 @@ module.exports = exports = function(webot){
         url: host,
         description: [
           '建议你试试这几条指令:',
-            'cd : 成都的拼车信息',
+            '0 : 拼车信息',
             's+空格+关键词 : 我会帮你百度搜索喔',
             '发送你的经纬度',
             '重看本指令请回复help或问号',
@@ -93,9 +93,9 @@ module.exports = exports = function(webot){
   });
 
   // 回复图文消息
-  webot.set('reply_pc', {
-    description: '发送pc,将回复拼车图文消息',
-    pattern: /^pc\s*(\d*)$/,
+  webot.set('reply_zero', {
+    description: '发送0,将回复拼车图文消息',
+    pattern: /^0\s*(\d*)$/,
     handler: function(info){
       var reply = [
         {title: '上海', description: '上海拼车信息图文消息描述1', pic: '', url: host + '/city/1/'},
