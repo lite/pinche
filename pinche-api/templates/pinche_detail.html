@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content_title %} {{ obj.title }} {% endblock %}
+
+{% block content %}
+    <div>
+        <ul>
+	        <li>时间： {{ obj.time }} </li>
+	        <li>联系人： {{ obj.publisher }} </li>
+	        <li>电话号码：{{ obj.phone }} </li>
+	        <li>路线：{{ obj.route }} </li>
+	        
+	        <p>{{ obj.content }} </p>
+	    </ul>
+    </div>
+{% endblock %}

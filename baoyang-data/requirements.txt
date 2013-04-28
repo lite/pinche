@@ -1,0 +1,10 @@
+PyYAML==3.10
+beautifulsoup4==4.1.1
+distribute==0.6.27
+html5lib==0.95
+mechanize==0.2.5
+nose==1.1.2
+virtualenv==1.7.2
+virtualenv-clone==0.2.4
+virtualenvwrapper==3.5
+wsgiref==0.1.2
