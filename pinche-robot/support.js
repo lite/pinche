@@ -5,6 +5,78 @@ var _ = require('underscore')._;
 var request = require('request');
 
 /**
+ * 通过百度地图API查询周围停车场的位置信息
+ */
+
+// curl "http://api.map.baidu.com/telematics/v2/geocoding?keyWord=晋吉北路&cityName=成都&output=json&ak=E082a470d4aa20ca369874f807d4ab5d"
+
+// "precise":0,
+//   "location":{
+//       "lng":103.99671210534,
+//       "lat":30.649532345778
+//   }
+
+// curl "http://api.map.baidu.com/telematics/v2/local?location=103.99671210534,30.649532345778&keyWord=停车场&ak=E082a470d4aa20ca369874f807d4ab5d"
+// {
+//     "status":"Success",
+//     "total":188,
+//     "pointList":[
+//         {
+//             "name":"\u51c0\u548c\u9152\u697c\u4e13\u7528\u505c\u8f66\u573a",
+//             "cityName":"\u6210\u90fd\u5e02",
+//             "location":{
+//                 "lng":103.99804611469,
+//                 "lat":30.649822961322
+//             },
+//             "address":"\u56db\u5ddd\u7701\u6210\u90fd\u5e02\u6b66\u4faf\u533a",
+//             "district":null,
+//             "type":"\u4ea4\u901a\u8bbe\u65bd<font color=\"#c60a00\">\u505c\u8f66\u573a<\/font>\/\u505c\u8f66\u533a"
+//         },
+//     ]
+// }
+
+// curl "http://api.map.baidu.com/telematics/v2/point?keyWord=晋吉北路&cityName=成都&ak=E082a470d4aa20ca369874f807d4ab5d"
+exports.geo2stop = function geo2stop(param, cb){
+  var token = 'E082a470d4aa20ca369874f807d4ab5d';
+  var options = {
+    url: 'http://api.map.baidu.com/telematics/v2/local',
+    qs: {
+      location: [param.lng, param.lat].join(','),
+      resType: 'json',
+      keyWord: '停车场',
+      output: 'json',
+      ak: token
+    }
+  };
+  log('querying amap for: [%s]', options.qs.location);
+
+  //查询
+  request.get(options, function(err, res, body){
+    if(err){
+      error('geo2stop failed', err);
+      return cb(err);
+    }
+    var data = JSON.parse(body);
+    if(data.pointList && data.pointList.length>=1){
+      var stops = '';
+      pointList = data.pointList;
+      for(i=0; i<pointList.length; i++){
+        data = pointList[i];
+        var location = [data.location.lng, data.location.lat].join(',');
+        var info = ['停车场:' + data.name, '城市名:' + data.cityName, '地址:' + data.address].join('\n');
+        log('location is %s, %j', location, info);
+        stops += info + "\n\n";
+      }
+      var location = [param.lng, param.lat].join(',');
+      return cb(null, location, stops);
+    }
+    log('geo2stop found nth.');
+    return cb('geo2stop found nth.');
+  });
+};
+
+
+/**
  * 通过高德地图API查询用户的位置信息
  */
 exports.geo2loc = function geo2loc(param, cb){

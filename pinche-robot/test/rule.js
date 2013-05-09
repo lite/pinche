@@ -33,56 +33,38 @@ describe('Rule', function(){
     };
   });
 
-  //测试dialog消息
-  describe('dialog', function(){
-    //检测key指令
-    it('should return key msg', function(done){
-      info.text = 'key aaaa';
-      sendRequest(info, function(err, json){
-        detect(info, err, json, /aaaa/);
-        json.Content.should.not.match(/太笨了/);
-        done();
-      });
-    });
-
-    //检测yaml指令
-    it('should return yaml msg', function(done){
-      info.text = 'yaml';
-      sendRequest(info, function(err, json){
-        detect(info, err, json, /这是一个yaml的object配置/);
-        done();
-      });
-    });
-  });
-
-  //测试wait
-  describe('wait', function(){
-    //检测search指令
-    it('should return search msg', function(done){
-      info.text = 's javascript';
-      sendRequest(info, function(err, json){
-        detect(info, err, json, /百度搜索.*javascript/);
-        done();
-      });
-    });
-  });
-
+  //测试地理位置
+  // describe('location', function(){
+  //   //检测check_location指令
+  //   it('should return check_location msg', function(done){
+  //     info.type = 'location';
+  //     info.xPos = '23.08';
+  //     info.yPos = '113.24';
+  //     info.scale = '12';
+  //     info.label = '广州市 某某地点';
+  //     sendRequest(info, function(err, json){
+  //       detect(info, err, json, /广州/);
+  //       done();
+  //     });
+  //   });
+  // });
+  
   //测试地理位置
   describe('location', function(){
     //检测check_location指令
     it('should return check_location msg', function(done){
       info.type = 'location';
-      info.xPos = '23.08';
-      info.yPos = '113.24';
+      info.xPos = '30.649532345778';
+      info.yPos = '103.99671210534';
       info.scale = '12';
-      info.label = '广州市 某某地点';
+      info.label = '成都 某某地点';
       sendRequest(info, function(err, json){
-        detect(info, err, json, /广州/);
+        detect(info, err, json, /成都/);
         done();
       });
     });
   });
-
+  
   //测试图文消息
   describe('news', function(){
     //检测首次收听指令
@@ -95,7 +77,7 @@ describe('Rule', function(){
         json.should.have.property('MsgType', 'news');
         json.should.have.property('FuncFlag', 0);
         json.Articles.item.should.have.length(json.ArticleCount);
-        json.Articles.item[0].Title[0].toString().should.match(/感谢你收听/);
+        json.Articles.item[0].Title[0].toString().should.match(/拼车机器人/);
         done();
       });
     });
@@ -109,7 +91,7 @@ describe('Rule', function(){
         json.should.have.property('MsgType', 'news');
         json.should.have.property('FuncFlag', 0);
         json.Articles.item.should.have.length(json.ArticleCount);
-        json.Articles.item[0].Title[0].toString().should.match(/微信机器人/);
+        json.Articles.item[0].Title[0].toString().should.match(/新闻1/);
         done();
       });
     });
