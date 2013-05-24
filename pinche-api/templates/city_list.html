@@ -3,9 +3,9 @@
 {% block content_title %} 所有城市 {% endblock %}
 
 {% block content %}
-  <ul>
+  <ul class="nav nav-list">
     {% for obj in obj_list %}
-      <li><a href="{{ url_for('city_detail', city_id=obj.id) }}">{{ obj.name }}</a></li>
+      <li class="btn"><a href="{{ url_for('city_detail', city_id=obj.id) }}">{{ obj.name }}</a></li>
     {% endfor %}
   </ul>
   {% include "includes/pagination.html" %}

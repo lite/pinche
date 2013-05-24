@@ -3,19 +3,15 @@
 {% block content_title %}宝马{% endblock %}
 
 {% block content %}
-  <div class="grid_4">
-    <img src="/files/bmw3.jpg" alt="华晨宝马" />
-    <p>
-        华晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马
-    </p>
-  </div>
-  <form method=post>
-    <dl>
-      <dt>请选择:</dt>
-      <dd>新车价格<input type="text" name="新车价格" /></dd>
-      <dd>里程数<input type="text" name="里程数" /></dd>
-      <dd>购买年月<input type="text" name="购买年月" /></dd>
-      <dd><input type="submit" value="计算" /></dd>
-    </dl>
-  </form>
+  <img src="/files/bmw3.jpg" alt="华晨宝马" />
+  <p>
+      华晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马晨宝马
+  </p>
+  <input type="text" class="input-block-level" placeholder="新车价格">
+  <input type="text" class="input-block-level" placeholder="里程数">
+  <input type="text" class="input-block-level" placeholder="2013年5月">
+  <label class="checkbox">
+    <input type="checkbox" value="remember-me"> 同意
+  </label>
+  <button class="btn btn-large btn-primary" type="submit">估价</button>
 {% endblock %}

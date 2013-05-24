@@ -3,7 +3,7 @@
 {% block content_title %} 详细信息 {% endblock %}
 
 {% block content %}
-  <ul>
+  <ul class="nav nav-list">
     {% for obj in obj_list %}
       <li><a href="{{ url_for('pinche_detail', pinche_id=obj.id) }}">{{ obj.title }}</a></li>
     {% endfor %}
