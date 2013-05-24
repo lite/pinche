@@ -8,7 +8,7 @@ module.exports = {
         {
           title: '新闻1', 
           description: '图文消息描述1', 
-          pic: host + 'static/bmc.png', 
+          pic: host + 'files/bmc.png', 
           url: host + 'pinche/1/'
         },
         {

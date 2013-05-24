@@ -8,7 +8,7 @@ module.exports = {
         {
           title: '上海上海上海上海上海', 
           description: '上海拼车信息图文消息描述1上海拼车信息图文消息描述1上海拼车信息图文消息描述1', 
-          pic: host + 'static/bmc.png', 
+          pic: host + 'files/bmc.png', 
           url: host + 'city/1/'
         },
         {

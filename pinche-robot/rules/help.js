@@ -10,7 +10,7 @@ module.exports = {
     handler: function(info){
       var reply = {
         title: '拼车机器人',
-        pic: host + 'static/bmc.png', 
+        pic: host + 'files/bmc.png', 
         url: host,
         description: [
             '建议你试试这几条指令:',
