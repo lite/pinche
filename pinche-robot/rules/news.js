@@ -1,3 +1,5 @@
+var host = "http://42.96.159.189/";
+
 module.exports = {
     description: '发送1,将回复图文消息',
     pattern: /^1\s*(\d*)$/,
@@ -6,20 +8,20 @@ module.exports = {
         {
           title: '新闻1', 
           description: '图文消息描述1', 
-          pic: 'http://42.96.159.189/static/weixin/bmc.png', 
-          url: 'http://42.96.159.189/m/pinche/1/'
+          pic: host + 'static/bmc.png', 
+          url: host + 'pinche/1/'
         },
         {
-          title: '新闻2', 
+          title: '图文消息描述3图文消息描述3图文消息描述3图文消息描', 
           description: '图文消息描述2', 
-          pic: 'http://42.96.159.189/static/weixin/bmc.png', 
-          url: 'http://42.96.159.189/m/pinche/2/'
+          pic: '', 
+          url: host + 'pinche/2/'
         },
         {
-          title: '新闻3', 
-          description: '图文消息描述3', 
-          pic: 'http://42.96.159.189/static/weixin/bmc.png', 
-          url: 'http://42.96.159.189/m/pinche/3/'
+          title: '新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3新闻3', 
+          description: '图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3图文消息描述3', 
+          pic: host + '', 
+          url: host + 'pinche/3/'
         }
       ];
       // 发送 "news 1" 时只回复一条图文消息
