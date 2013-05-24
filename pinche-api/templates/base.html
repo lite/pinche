@@ -1,54 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Ember Starter Kit</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
-
-    {{outlet}}
+    <h2>{% block content_title %}{% endblock %}</h2>
+    {% block content %}{% endblock %}
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
     <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
+      <li><a href="{{ url_for('city_list') }}">所有城市</a></li>
+      <li><a href="{{ url_for('pinche_list') }}">所有信息</a></li>
     </ul>
   </script>
 
-  <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
-  <script src="js/app.js"></script>
+  <script src="{{ url_for('static', filename='js/libs/jquery-1.9.1.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/libs/handlebars-1.0.0-rc.3.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/libs/ember-1.0.0-rc.3.js"></script>
+  <script src="{{ url_for('static', filename='js/libs/app.js">
 
 </body>
 </html>
-
-<title>拼车</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<div class=page>
-  <h1><a href="{{ url_for('homepage') }}">拼车</a></h1>
-  <div class=metanav>
-  {% if not session.logged_in %}
-    <a href="{{ url_for('auth.login') }}">log in</a>
-    <a href="{{ url_for('join') }}">join</a>
-  {% else %}
-    <a href="{{ url_for('city_list') }}">所有城市</a>
-    <a href="{{ url_for('pinche_list') }}">所有信息</a>
-    <!-- <a href="{{ url_for('public_timeline') }}">public timeline</a> -->
-    <!-- <a href="{{ url_for('create') }}">create</a> -->
-    <a href="{{ url_for('auth.logout') }}">log out</a>
-  {% endif %}
-  </div>
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
-  <h2>{% block content_title %}{% endblock %}</h2>
-  {% block content %}{% endblock %}
-</div>
