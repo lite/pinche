@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content_title %}宝马{% endblock %}
+
+{% block content %}
+  <a href="/bmw/"><img src="{{ url_for('files', filename='华晨宝马3.jpg') }}" alt="华晨宝马" /></a>
+  <form method=post>
+    <dl>
+      <dt>请选择:</dt>
+      <dd>新车价格<input type="text" name="新车价格" /></dd>
+      <dd>里程数<input type="text" name="里程数" /></dd>
+      <dd>购买年月<input type="text" name="购买年月" /></dd>
+      <dd><input type="submit" value="计算" /></dd>
+    </dl>
+  </form>
+{% endblock %}

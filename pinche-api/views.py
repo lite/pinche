@@ -143,3 +143,7 @@ def pinche_list():
 def pinche_detail(pinche_id):
     obj = get_object_or_404(Pinche, id=pinche_id)
     return render_template('pinche_detail.html', obj=obj)
+
+@app.route('/bmw/')
+def bmw(pinche_id):
+    return render_template('bmw.html')
