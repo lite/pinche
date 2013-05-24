@@ -1,44 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>拼车</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!-- Mobile viewport -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+<link rel="shortcut icon" href="images/favicon.ico"  type="image/x-icon" />
+
+<!-- CSS-->
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Ubuntu' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='js/flexslider/flexslider.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='bones-ie-only-css'  href='css/ie.css' type='text/css' media='all' />
+<![endif]-->
+
+<!-- end CSS-->
     
-    <title>拼车</title>
-    <script src="responsiveimgs.js"></script>
-    <!-- Meta tags -->
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- JS-->
+<script src="{{ url_for('static', filename='js/libs/modernizr-2.6.2.min.js') }}"></script>
+<!-- end JS-->
 
-    <!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
+</head>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css?version=1" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<body onLoad="setTimeout(function() {window.scrollTo(0, 1)}, 100)" id="home">
 
-    <!-- JavaScript -->
-    <!--[if IE]><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="assets/js/respond.min.js"></script>
-  </head>
-<body>
+<!-- main content area -->   
+<div id="main" role="main" class="wrapper">
+    
   <h2>{% block content_title %}{% endblock %}</h2>
     
-  <script type="text/x-handlebars" data-template-name="index">
+<!-- content area -->    
+  <div class="grid_12" id="content">
+    {% block content %}{% endblock %}
+  </div><!-- #end content area -->
+      <!-- left sidebar -->    
+    <aside>
     <ul>
       <li><a href="{{ url_for('city_list') }}">所有城市</a></li>
       <li><a href="{{ url_for('pinche_list') }}">所有信息</a></li>
     </ul>
-    {% block content %}{% endblock %}
-  </script>
+  
+    </aside><!-- #end left sidebar -->
+ 
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
+    
 
-  <script src="{{ url_for('static', filename='js/libs/jquery-1.9.1.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/libs/handlebars-1.0.0-rc.3.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/libs/ember-1.0.0-rc.3.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<!-- responsive FlexSlider slideshow by  -->
+<script defer src="{{ url_for('static', filename='js/flexslider/jquery.flexslider-min.js') }}"></script>   
 
+<!-- fire ups - read this file!  -->   
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        
 </body>
 </html>

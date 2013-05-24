@@ -1,0 +1,185 @@
+/*
+YAMB version 2.
+
+styles for dumber browsers. IE<9
+
+
+*/
+
+header{position:relative;
+z-index:2;
+}
+#main{position:relative;
+z-index:1;
+}
+
+.wrapper, #colophon{
+	width: 980px; 
+	margin: 20px auto;
+	padding: 20px 0;
+}
+
+#banner{ 
+	float:left; 
+	text-align:left;
+	padding-right:2%;
+	width:300px;
+}
+
+#hero{
+	padding:40px 0 10px 0;
+}
+
+#content {  
+	float:left;
+	width:65%;
+	margin:0 0 40px 0;}
+
+.flexslider{
+	display:block;
+	width:57%;
+	float:right;
+}
+
+aside { 
+	float:right;
+	width:30%;
+	margin:0 0 40px 0;
+}
+
+/*** MAIN MENU - ESSENTIAL STYLES ***/
+
+.menu-toggle{display:none;}
+#menu-main-navigation{display:block;}
+
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			12em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			45px; /* match top ul list item height */
+	z-index:		99;
+	-webkit-box-shadow:  2px 3px 2px 0px rgba(00, 00, 00, .3);
+    box-shadow:  2px 3px 2px 0px rgba(00, 00, 00, .3);
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			12em; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*** DEMO SKIN ***/
+#topnav, .sf-menu {
+	float:right;
+	margin: 1em 0 0 0;
+}
+.sf-menu a {
+	text-decoration:none;
+}
+.sf-menu li a {
+	background:#fff;
+	margin:0; 
+	padding:10px 20px;
+	height:25px;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color:			#0099ff;	
+}
+.sf-menu li li a {
+		border-top:		1px solid #fff;
+		background:		#e8e8e8;
+		padding-left:20px;
+}
+.sf-menu li li li a{
+	padding-left:20px;
+	background:		#e8e8e8;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:#0099ff;
+	outline:		0;
+	color:#fff;
+}
+.sf-menu li:hover > a{ 
+	color:#fff;
+	background:#0099ff;
+}
+
+
+/*GRID*/
+/*
+ & Columns : 12 
+
+ */
+.grid_1 { width: 5%; }
+.grid_2 { width: 13.333333333333%; }
+.grid_3 { width: 21.666666666667%; }
+.grid_4 { width: 30%; }
+.grid_5 { width: 38.333333333333%; }
+.grid_6 { width: 46.666666666667%; }
+.grid_7 { width: 55%; }
+.grid_8 { width: 63.333333333333%; }
+.grid_9 { width: 71.666666666667%; }
+.grid_10 { width: 80%; }
+.grid_11 { width: 88.333333333333%; }
+.grid_12 { width: 96.666666666667%; }
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+	margin-left: 1.6666666666667%;
+	margin-right: 1.6666666666667%;
+	float: left;
+	display: block;
+}
+
+.alpha{margin-left:0px;}
+.omega{margin-right:0px;}
+/* @
+ * tinyfluidgrid.com
+ & girlfriendnyc.com
+ */
