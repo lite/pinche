@@ -145,5 +145,5 @@ def pinche_detail(pinche_id):
     return render_template('pinche_detail.html', obj=obj)
 
 @app.route('/bmw/')
-def bmw(pinche_id):
+def bmw():
     return render_template('bmw.html')

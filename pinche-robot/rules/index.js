@@ -1,5 +1,6 @@
 module.exports = function(webot) {
-  ['news', 'help', 'home'].forEach(function(item) {
+  var pages = ['news', 'help', 'home', "bmw"];
+  pages.forEach(function(item) {
     webot.set(item, require('./' + item));
   });
 
