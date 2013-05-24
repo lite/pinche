@@ -10,7 +10,7 @@ module.exports = {
       var reply = {
         title: '拼车机器人',
         pic: 'https://secure.gravatar.com/avatar/0024710771815ef9b74881ab21ba4173?s=420',
-        url: 'http://42.96.159.189',
+        url: 'http://42.96.159.189/m/',
         description: [
           '建议你试试这几条指令:',
             '0 : 拼车信息',
