@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Ember Starter Kit</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
@@ -20,10 +20,10 @@
     </ul>
   </script>
 
-  <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
-  <script src="js/app.js"></script>
+  <script src="{{ url_for('static', filename='js/libs/jquery-1.9.1.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/libs/handlebars-1.0.0-rc.3.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/libs/ember-1.0.0-rc.3.js"></script>
+  <script src="{{ url_for('static', filename='js/libs/app.js">
 
 </body>
 </html>
