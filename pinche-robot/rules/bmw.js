@@ -6,16 +6,16 @@ module.exports = {
     handler: function(info){
       var reply = [
         {
-          title: '新闻1',
+          title: '自定义图文消息',
           description: '图文消息描述1',
           pic: encodeURI(host + 'files/华晨宝马3.jpg'),
           url: host + 'bmw/'
         },
         {
-          title: '消息2',
+          title: '编辑模式图文消息',
           description: '图文消息描述2',
-          pic: 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=2021121975&fileId=10000004&mode=large&source=file',
-          url: ''
+          pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+          url: 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MTM4OTY0MA==&appmsgid=10000005&itemidx=1#wechat_redirect'
         },
       ];
       // 发送 "news 1" 时只回复一条图文消息
