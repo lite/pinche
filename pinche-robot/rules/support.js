@@ -63,7 +63,7 @@ exports.geo2stop = function geo2stop(param, cb){
       for(i=0; i<pointList.length; i++){
         data = pointList[i];
         var location = [data.location.lng, data.location.lat].join(',');
-        var info = ['名称:' + data.name, '城市:' + data.cityName, '地址:' + data.address].join('\n');
+        var info = ['名称:' + data.name, '地址:' + data.address, '坐标:' + location].join('\n');
         log('location is %s, %j', location, info);
         stops += info + "\n\n";
       }

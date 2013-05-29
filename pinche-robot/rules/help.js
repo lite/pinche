@@ -9,9 +9,9 @@ module.exports = {
     },
     handler: function(info){
       var reply = {
-        title: '拼车机器人',
+        title: '感谢你收听',
         pic: host + 'files/bmc.png', 
-        url: host,
+        url: host + '/city/',
         description: [
             '建议你试试这几条指令:',
             '0 : 拼车信息',
