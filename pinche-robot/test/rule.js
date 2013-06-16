@@ -33,25 +33,25 @@ describe('Rule', function(){
     };
   });
 
-  describe('新闻', function(){
-    it('should return 新闻 msg', function(done){
-      info.type = 'text';
-      info.text = '新闻';
-      sendRequest(info, function(err, json){
-        detect(info, err, json);
-        json.Articles.item[0].Title[0].toString().should.match(/编辑模式图文消息1/);
-        done();
-      });
-    });
-  });
-
   describe('估价', function(){
     it('should return 估价 msg', function(done){
       info.type = 'text';
       info.text = '估价';
       sendRequest(info, function(err, json){
         detect(info, err, json);
-        json.Articles.item[0].Title[0].toString().should.match(/二手车估价/);
+        json.Articles.item[1].Title[0].toString().should.match(/二手车估价/);
+        done();
+      });
+    });
+  });
+
+  describe('奥迪', function(){
+    it('should return 保养 msg', function(done){
+      info.type = 'text';
+      info.text = '奥迪';
+      sendRequest(info, function(err, json){
+        detect(info, err, json);
+        json.Articles.item[0].Title[0].toString().should.match(/保养/);
         done();
       });
     });
@@ -64,6 +64,18 @@ describe('Rule', function(){
       sendRequest(info, function(err, json){
         detect(info, err, json);
         json.Articles.item[0].Title[0].toString().should.match(/上海/);
+        done();
+      });
+    });
+  });
+
+  describe('新闻', function(){
+    it('should return 新闻 msg', function(done){
+      info.type = 'text';
+      info.text = '新闻';
+      sendRequest(info, function(err, json){
+        detect(info, err, json);
+        json.Articles.item[0].Title[0].toString().should.match(/编辑模式图文消息1/);
         done();
       });
     });

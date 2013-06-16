@@ -1,11 +1,26 @@
 ---
 
-#单图文消息
 估价: [
+  {
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0'
+  },
   {
     title: 二手车估价,
     pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
     url: 'http://42.96.159.189/gujia/'
+  }
+]
+
+#多图文消息
+奥迪: [
+  {
+    title: 保养参数,
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+    url: 'http://m.autohome.com.cn/brand/33/?search=1'
+  },
+  {
+    title: 经销商,
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
   }
 ]
   
