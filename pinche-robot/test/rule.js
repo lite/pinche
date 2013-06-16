@@ -33,35 +33,50 @@ describe('Rule', function(){
     };
   });
 
-  // //测试news消息
-  describe('news', function(){
-    it('should return news msg', function(done){
+  describe('新闻', function(){
+    it('should return 新闻 msg', function(done){
       info.type = 'text';
-      info.text = '0';
+      info.text = '新闻';
       sendRequest(info, function(err, json){
         detect(info, err, json);
-        json.should.have.property('MsgType', 'news');
-        json.should.have.property('FuncFlag', 0);
-        json.Articles.item.should.have.length(json.ArticleCount);
+        json.Articles.item[0].Title[0].toString().should.match(/编辑模式图文消息1/);
+        done();
+      });
+    });
+  });
+
+  describe('估价', function(){
+    it('should return 估价 msg', function(done){
+      info.type = 'text';
+      info.text = '估价';
+      sendRequest(info, function(err, json){
+        detect(info, err, json);
+        json.Articles.item[0].Title[0].toString().should.match(/二手车估价/);
+        done();
+      });
+    });
+  });
+
+  describe('拼车', function(){
+    it('should return 拼车 msg', function(done){
+      info.type = 'text';
+      info.text = '拼车';
+      sendRequest(info, function(err, json){
+        detect(info, err, json);
         json.Articles.item[0].Title[0].toString().should.match(/上海/);
         done();
       });
     });
   });
 
-  //测试图文消息
-  describe('news', function(){
+  describe('subscribe', function(){
     //检测首次收听指令
     it('should return subscribe message.', function(done){
       info.type = 'event';
       info.event = 'subscribe';
       info.eventKey = '';
       sendRequest(info, function(err, json){
-        detect(info, err, json);
-        json.should.have.property('MsgType', 'news');
-        json.should.have.property('FuncFlag', 0);
-        json.Articles.item.should.have.length(json.ArticleCount);
-        json.Articles.item[0].Title[0].toString().should.match(/感谢你收听/);
+        detect(info, err, json, /感谢关注汽车帮测试版/);
         done();
       });
     });

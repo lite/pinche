@@ -147,3 +147,19 @@ def pinche_detail(pinche_id):
 @app.route('/bmw/')
 def bmw():
     return render_template('bmw.html')
+
+import gujia
+
+@app.route('/gujia/', methods=['GET', 'POST'])
+def gj():
+    if request.method == 'POST':
+        j = request.form['j']
+        c = request.form['c']
+        y = request.form['y']
+        m = request.form['m']
+        p = gujia.get_gujia(j, c, [y, m])
+        print "=====", j, c, y, m, p
+        return render_template('gujia.html', p=p)
+
+    print "====="
+    return render_template('gujia.html')

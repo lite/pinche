@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content_title %}二手车估计{% endblock %}
+
+{% block content %}
+  <p>你输入的二手车信息</p>
+  <form class="form-horizontal" action="{{ url_for('gj') }}" method=post>
+    <div class="control-group">
+      <label class="control-label" for="j">购买新车价格</label>
+      <div class="controls">
+        <input type="text" name="j" value="680000">
+      </div>
+      <label class="control-label" for="c">元</label>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="c">行驶里程</label>
+      <div class="controls">
+        <input type="text" name="c" value="60000">
+      </div>
+      <label class="control-label" for="c">公里</label>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="ym">首次上牌时间</label>
+      <div class="controls">
+        <select name="y">
+          <option>2010</option>
+          <option>2011</option>
+          <option>2012</option>
+        </select>
+        <label class="control-label" for="y">年</label>
+        <select name="m">
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+        <label class="control-label" for="y">月</label>        
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+          <button class="btn btn-large btn-primary" type="submit">估价</button>
+      </div>
+    </div>
+    {% if p %}
+      <label class="control-label" for=""> {{ p }} 元</label>
+    {% endif %}
+  </form>
+{% endblock %}
