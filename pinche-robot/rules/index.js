@@ -4,7 +4,7 @@ module.exports = function(webot) {
   var doc = require(__dirname + "/conf/links.yaml");
   Object.keys(doc).forEach(function(key) {
   	webot.set({
-	  	pattern: "/^"+key+"$/",
+	  	pattern: "/^"+key+"$/i",
 	  	handler: function(info) { return doc[key];}
 	});
   });
