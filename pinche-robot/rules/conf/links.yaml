@@ -72,7 +72,7 @@
   {
     title: '车型参数', 
     pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-    url: 'http://127.0.0.1:5000/type/'
+    url: 'http://42.96.159.189/type/'
   },
   {
     title: '保养参数', 
