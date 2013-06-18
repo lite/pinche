@@ -163,3 +163,29 @@ def gj():
 
     print "====="
     return render_template('gujia.html')
+
+@app.route('/car/')
+def car():
+    return render_template('car.html')
+
+@app.route('/used/', methods=['GET', 'POST'])
+def used_car():
+    if request.method == 'POST':
+        j = request.form['j']
+        c = request.form['c']
+        y = request.form['y']
+        m = request.form['m']
+        p = gujia.get_gujia(j, c, [y, m])
+        print "=====", j, c, y, m, p
+        return render_template('used_car.html', p=p)
+
+    print "====="
+    return render_template('used_car.html')
+
+@app.route('/type/')
+def cars_type():
+    return render_template('cars_type.html')
+
+@app.route('/maintain/')
+def cars_maintain():
+    return render_template('cars_maintain.html')

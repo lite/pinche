@@ -1,0 +1,71 @@
+body{padding:0px;font-family:微软雅黑,"Helvetica Neue",Helvetica,Arial,sans-serif;background: #ececf1;}
+a{color:#024a96;}
+.header{
+background-color:#ececf1;
+background:-webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#ececf1));
+background:-moz-linear-gradient(top, #fefefe, #ececf1);
+}
+.header h3{text-align:center;color:#024a96;margin:10px 0;}
+.blue {background-color:#024a96;}
+.red{background-color:#c40d1b;}
+.blue ,.red{width:50%;float:left;height:5px;display:block;}
+.description{margin-top:3%;}
+.description li{margin-top:5px;}
+.price{color:#c40d1b;}
+.car_des{
+	background: #fff;
+	border-bottom:1px solid #c4c4c4;
+}
+.car_model_title{
+background:-webkit-gradient(linear, 0 0, 0 100%, from(#e7e7e7), to(#d3d3d3));
+background:-moz-linear-gradient(top, #e7e7e7, #d3d3d3);
+border-top:1px solid #f4f4f4;
+border-bottom:1px solid #c4c4c4;
+}
+.car_model_title h4 {padding-left:10px;font-weight:normal;}
+
+.car_model_detail{
+	background:#ebeced;
+	border-bottom:1px solid #c4c4c4;
+}
+.car_model_detail li{
+	padding-left:10px;
+	padding-top:10px;
+	
+}
+.row-fluid.car_model_detail li p{
+	margin-left:0px;
+}
+.used_car .module{
+	padding: 0 10px;
+}
+.caption h5{
+	font-weight: normal;
+}
+
+.content form{
+	background-color: #fff;
+}
+.content .control-label{
+	width:30%;
+}
+.content .controls{
+	margin-left:30%;
+}
+.button button{
+	background-image: -moz-linear-gradient(top, #f99a2c, #f66d26);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f99a2c), to(#f66d26));
+  background-image: -webkit-linear-gradient(top, #f99a2c, #f66d26);
+  background-image: -o-linear-gradient(top, #f99a2c, #f66d26);
+  background-image: linear-gradient(to bottom, #f99a2c, #f66d26);
+	
+	background-color:#f66d26;
+}
+.button button:hover,.button button:focus,.button button:active
+{
+background-color:#f66d26;
+}
+
+.cars_type .types{
+	padding:10px 10px 0;
+}
