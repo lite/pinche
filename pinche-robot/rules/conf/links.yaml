@@ -2,11 +2,11 @@
 
 估价: [
   {
+    title: 估价,
     pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0'
   },
   {
     title: 二手车估价,
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
     url: 'http://42.96.159.189/gujia/'
   }
 ]
@@ -23,7 +23,7 @@
     pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
   }
 ]
-  
+
 #多图文消息，链接到微信平台资源
 新闻: [
   {
@@ -50,5 +50,33 @@
   {
     title: '成都',
     url: ‘http://42.96.159.189/city/2/'
+  }
+]
+
+#测试页面
+测试: [
+  {
+    title: '测试页面', 
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+  },
+  {
+    title: '奥迪A6L', 
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+    url: 'http://42.96.159.189/car/'
+  },
+  {
+    title: '二手车评估', 
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+    url: 'http://42.96.159.189/used/'
+  },
+  {
+    title: '车型参数', 
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+    url: 'http://127.0.0.1:5000/type/'
+  },
+  {
+    title: '保养参数', 
+    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+    url: 'http://42.96.159.189/maintain/'
   }
 ]

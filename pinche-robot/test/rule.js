@@ -81,6 +81,18 @@ describe('Rule', function(){
     });
   });
 
+  describe('测试', function(){
+    it('should return 二手车评估 msg', function(done){
+      info.type = 'text';
+      info.text = '测试';
+      sendRequest(info, function(err, json){
+        detect(info, err, json);
+        json.Articles.item[2].Title[0].toString().should.match(/二手车评估/);
+        done();
+      });
+    });
+  });
+
   describe('subscribe', function(){
     //检测首次收听指令
     it('should return subscribe message.', function(done){
