@@ -19,6 +19,13 @@ def create_tables():
     City.create_table()
     Pinche.create_table()
     
+def create_car_tables():
+    from models import CarBrand, CarSeries, CarModel
+
+    CarBrand.create_table()
+    CarSeries.create_table()
+    CarModel.create_table()
+
 @app.template_filter('is_following')
 def is_following(from_user, to_user):
     return from_user.is_following(to_user)

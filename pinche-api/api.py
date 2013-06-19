@@ -3,7 +3,7 @@ from flask_peewee.rest import RestAPI, RestResource, UserAuthentication, AdminAu
 from app import app
 from auth import auth
 from models import User, Message, Relationship, City, Pinche
-
+from models import CarBrand, CarSeries, CarModel
 
 user_auth = UserAuthentication(auth)
 admin_auth = AdminAuthentication(auth)
@@ -36,6 +36,23 @@ class PincheResource(RestResource):
         'city': CityResource,
     }
 
+class CarBrandResource(RestResource):
+    exclude = ()
+
+class CarSeriesResource(RestResource):
+    exclude = ()
+    owner_field = 'brand'
+    include_resources = {
+        'brand': CarBrandResource,
+    }
+
+class CarModelResource(RestResource):
+    exclude = ()
+    owner_field = 'series'
+    include_resources = {
+        'series': CarSeriesResource,
+    }
+
 # register our models so they are exposed via /api/<model>/
 api.register(User, UserResource, auth=admin_auth)
 api.register(Relationship, RelationshipResource)
@@ -43,3 +60,6 @@ api.register(Message, MessageResource)
 
 api.register(City, CityResource)
 api.register(Pinche, PincheResource)
+api.register(CarBrand, CarBrandResource)
+api.register(CarSeries, CarSeriesResource)
+api.register(CarModel, CarModelResource)

@@ -7,6 +7,7 @@ from flask_peewee.filters import QueryFilter
 from app import app, db
 from auth import auth
 from models import User, Message, Note, Relationship, City, Pinche
+from models import CarBrand, CarSeries, CarModel
 
 class NotePanel(AdminPanel):
     template_name = 'admin/notes.html'
@@ -61,7 +62,16 @@ class CityAdmin(ModelAdmin):
 class PincheAdmin(ModelAdmin):
     columns = ('city', 'title', 'phone', 'route', 'publisher', 'content',)
     exclude = ('pub_date',)
+
+class CarBrandAdmin(ModelAdmin):
+    columns = ('name',)
+
+class CarSeriesAdmin(ModelAdmin):
+    columns = ('brand', 'name',)
     
+class CarModelAdmin(ModelAdmin):
+    columns = ('series', 'name',)
+
 auth.register_admin(admin)
 admin.register(Relationship)
 admin.register(Message, MessageAdmin)
@@ -71,3 +81,6 @@ admin.register_panel('User stats', UserStatsPanel)
 
 admin.register(City, CityAdmin)
 admin.register(Pinche, PincheAdmin)
+admin.register(CarBrand, CarBrandAdmin)
+admin.register(CarSeries, CarSeriesAdmin)
+admin.register(CarModel, CarModelAdmin)

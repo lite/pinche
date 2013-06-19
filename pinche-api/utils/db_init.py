@@ -12,3 +12,4 @@ admin.save()
 
 import app
 app.create_tables()
+app.create_car_tables()

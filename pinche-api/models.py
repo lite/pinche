@@ -75,4 +75,24 @@ class Pinche(db.Model):
     publisher = CharField()
     content = TextField()
     pub_date = DateTimeField(default=datetime.datetime.now)
+
+class CarBrand(db.Model):
+    name = CharField()
+
+    def __unicode__(self):
+        return self.name
+
+class CarSeries(db.Model):
+    brand = ForeignKeyField(CarBrand)
+    name = CharField()
+
+    def __unicode__(self):
+        return self.name
+
+class CarModel(db.Model):
+    series = ForeignKeyField(CarSeries)
+    name = CharField()
+
+    def __unicode__(self):
+        return self.name
     
