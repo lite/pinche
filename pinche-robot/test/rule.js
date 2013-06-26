@@ -184,7 +184,7 @@ describe('Rule', function(){
           info.label = '成都 某某地点';
           sendRequest(info, function(err, json){
             detect(info, err, json);
-            json.Articles.item[1].Title[0].toString().should.match(/晋阳/);
+            json.Articles.item[1].Title[0].toString().should.match(/成都/);
             done();
           });
         }, 2000); 

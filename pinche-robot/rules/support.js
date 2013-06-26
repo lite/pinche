@@ -55,13 +55,16 @@ function Rad(d)
 
 function parse_result(param, data){
   var params = new Array();
+  var pos = {}
+  pos.title = param.label + "周边信息";
+  pos.pic = 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0';
+  params.push(pos);
   pointList = data.pointList;
   for(i=0; i<pointList.length; i++){
     data = pointList[i];
     var distance = distanceByLnglat(data.location.lng, data.location.lat, param.lng, param.lat);
     var item = {}
-    item.title = data.name + "地址：" + data.address + "\n距离：" + distance + "米";
-    item.pic = 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0';
+    item.title = data.name + "\n地址：" + data.address + "\n距离：" + distance + "米";
     item.url = 'http://m.autohome.com.cn/brand/33/?search=1';
     params.push(item);
   }
