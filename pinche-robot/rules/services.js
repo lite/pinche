@@ -1,4 +1,4 @@
-var geo2stop = require('./support').geo2stop;
+var geo2find = require('./support').geo2find;
 
 module.exports = exports = function(webot){
   // 租车
@@ -32,8 +32,8 @@ module.exports = exports = function(webot){
       return '你的操作超时了,请重新输入。';
     } else {
       if(info.is('location')){
-        geo2stop(info.param, info.session.keyword, function(err, location, data) {
-            result = data ? data : '周围没有服务点。'
+        geo2find(info.param, info.session.keyword, function(err, result) {
+            console.log(result);
             next(null, result);
           });
       }else{

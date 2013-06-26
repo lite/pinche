@@ -34,9 +34,42 @@ var request = require('request');
 //         },
 //     ]
 // }
+// 
 
+function distanceByLnglat(lng1,lat1,lng2,lat2)
+{
+  var EARTH_RADIUS = 6378137.0;
+  var radLat1 = Rad(lat1);
+  var radLat2 = Rad(lat2);
+  var a = radLat1 - radLat2;
+  var b = Rad(lng1) - Rad(lng2);
+  var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
+  s = s * EARTH_RADIUS;// 取WGS84标准参考椭球中的地球长半径(单位:m)
+  return Math.round(s * 10000) / 10000;
+}
+
+function Rad(d)
+{
+  return d * Math.PI / 180.0;
+}
+
+function parse_result(param, data){
+  var params = new Array();
+  pointList = data.pointList;
+  for(i=0; i<pointList.length; i++){
+    data = pointList[i];
+    var distance = distanceByLnglat(data.location.lng, data.location.lat, param.lng, param.lat);
+    params.push({
+      title: data.name,
+      description: "地址：" + data.address + "\n距离：" + distance + "米",
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+      url: 'http://m.autohome.com.cn/brand/33/?search=1'
+    });
+  }
+  return params;
+}
 // curl "http://api.map.baidu.com/telematics/v2/point?keyWord=晋吉北路&cityName=成都&ak=E082a470d4aa20ca369874f807d4ab5d"
-exports.geo2stop = function geo2stop(param, kw, cb){
+exports.geo2find = function geo2find(param, kw, cb){
   var token = 'E082a470d4aa20ca369874f807d4ab5d';
   var options = {
     url: 'http://api.map.baidu.com/telematics/v2/local',
@@ -53,25 +86,15 @@ exports.geo2stop = function geo2stop(param, kw, cb){
   //查询
   request.get(options, function(err, res, body){
     if(err){
-      error('geo2stop failed', err);
+      error('geo2find failed', err);
       return cb(err);
     }
     var data = JSON.parse(body);
     if(data.pointList && data.pointList.length>=1){
-      var stops = '';
-      pointList = data.pointList;
-      for(i=0; i<pointList.length; i++){
-        data = pointList[i];
-        var location = [data.location.lng, data.location.lat].join(',');
-        var info = ['名称:' + data.name, '地址:' + data.address, '坐标:' + location].join('\n');
-        log('location is %s, %j', location, info);
-        stops += info + "\n\n";
-      }
-      var location = [param.lng, param.lat].join(',');
-      return cb(null, location, stops);
+      var result = JSON.stringify(parse_result(param, data));
+      return cb(null, result);
     }
-    log('geo2stop found nth.');
-    return cb('geo2stop found nth.');
+    return cb('geo2find found nth.');
   });
 };
 

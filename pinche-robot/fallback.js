@@ -9,6 +9,7 @@ module.exports = exports = function(webot){
       '新闻', 
       '拼车',
       '估价',
+      '租车',
       '或者发送当前位置获取停车场信息'].join("\n");
     }
   });

@@ -5,7 +5,10 @@ module.exports = function(webot) {
   Object.keys(doc).forEach(function(key) {
     webot.set({
       pattern: "/^"+key+"$/i",
-      handler: function(info) { return doc[key];}
+      handler: function(info) { 
+        console.log(doc[key]);
+        return doc[key];
+      }
     });
   });
 
