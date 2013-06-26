@@ -1,82 +1,78 @@
 ---
 
 估价: [
-  {
-    title: 估价,
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0'
-  },
-  {
-    title: 二手车估价,
-    url: 'http://42.96.159.189/used/'
-  }
-]
+    {
+      title: 估价,
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0'
+    },
+    {
+      title: 二手车估价,
+      url: 'http://42.96.159.189/used/'
+    }
+  ]
 
 #多图文消息
 奥迪: [
-  {
-    title: 保养参数,
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
-    url: 'http://m.autohome.com.cn/brand/33/?search=1'
-  },
-  {
-    title: 经销商,
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
-  }
-]
+    {
+      title: 保养参数,
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+      url: 'http://m.autohome.com.cn/brand/33/?search=1'
+    },
+    {
+      title: 经销商,
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+    }
+  ]
 
 #多图文消息，链接到微信平台资源
 新闻: [
-  {
-    title: 编辑模式图文消息1,
-    description: 图文消息描述1,
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
-    url: 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MTM4OTY0MA==&appmsgid=10000005&itemidx=1#wechat_redirect'
-  },
-  {
-    title: 编辑模式图文消息2,
-    description: 图文消息描述2,
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
-    url: 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MTM4OTY0MA==&appmsgid=10000005&itemidx=1#wechat_redirect'
-  }
-]
+    {
+      title: 编辑模式图文消息1,
+      description: 图文消息描述1,
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+      url: 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MTM4OTY0MA==&appmsgid=10000005&itemidx=1#wechat_redirect'
+    },
+    {
+      title: 编辑模式图文消息2,
+      description: 图文消息描述2,
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
+      url: 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MTM4OTY0MA==&appmsgid=10000005&itemidx=1#wechat_redirect'
+    }
+  ]
 
 #多图文消息，链接到其他网站
 拼车: [
-  {
-    title: '上海', 
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-    url: 'http://42.96.159.189/city/1/'
-  },
-  {
-    title: '成都',
-    url: ‘http://42.96.159.189/city/2/'
-  }
-]
+    {
+      title: '上海', 
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+      url: 'http://42.96.159.189/city/1/'
+    },
+    {
+      title: '成都',
+      url: ‘http://42.96.159.189/city/2/'
+    }
+  ]
 
 #测试页面
-测试: [
-  {
-    title: '测试页面', 
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-  },
-  {
-    title: '奥迪A6L', 
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-    url: 'http://42.96.159.189/car/'
-  },
-  {
-    title: '二手车评估', 
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-    url: 'http://42.96.159.189/used/'
-  },
-  {
-    title: '车型参数', 
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-    url: 'http://42.96.159.189/type/'
-  },
-  {
-    title: '保养参数', 
-    pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
-    url: 'http://42.96.159.189/maintain/'
-  }
-]
+A6: [
+    {
+      title: '奥迪A6介绍', 
+      pic: 'http://www.netcarshow.com/audi/2012-a6_hybrid/800x600/wallpaper_02.htm',
+      url: 'http://wapbaike.baidu.com/view/565423.htm?ssid=0&from=0&uid=059E08D51A0FA485186718D028313728&pu=sz%40224_220%2Cusm%402%2Cta%40middle___3_537&bd_page_type=1&tj=Xk_4_0_10_title'
+    },
+    {
+      title: '奥迪A6L价格', 
+      pic: 'http://aaastorage.co/iconMONEY.jpg', 
+      url: 'http://m.autohome.com.cn/18/?pvareaid=101353'
+    },
+    {
+      title: '车型参数', 
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+      url: 'http://42.96.159.189/type/'
+    },
+    {
+      title: '保养参数', 
+      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0', 
+      url: 'http://42.96.159.189/maintain/'
+    }
+  ]

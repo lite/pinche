@@ -81,13 +81,13 @@ describe('Rule', function(){
     });
   });
 
-  describe('测试', function(){
-    it('should return 二手车评估 msg', function(done){
+  describe('A6', function(){
+    it('should return 奥迪A6L价格 msg', function(done){
       info.type = 'text';
-      info.text = '测试';
+      info.text = 'A6';
       sendRequest(info, function(err, json){
         detect(info, err, json);
-        json.Articles.item[2].Title[0].toString().should.match(/二手车评估/);
+        json.Articles.item[1].Title[0].toString().should.match(/奥迪A6L价格/);
         done();
       });
     });
@@ -111,146 +111,83 @@ describe('Rule', function(){
     //检测check_location指令
     it('should return check_location msg', function(done){
       info.type = 'location';
-      info.xPos = '30.649532345778';
-      info.yPos = '103.99671210534';
+      info.xPos = '23.08';
+      info.yPos = '113.24';
       info.scale = '12';
-      info.label = '成都 某某地点';
+      info.label = '广州市 某某地点';
       sendRequest(info, function(err, json){
-        detect(info, err, json, /成都/);
+        detect(info, err, json, /113.24,23.08/);
         done();
       });
     });
   });
 
-  // //测试wait
-  // describe('wait', function(){
-  //   //检测sex指令
-  //   it('should pass guess sex', function(done){
-  //     info.text = '你是男人还是女人';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json, /猜猜看/);
-  //       //下次回复
-  //       info.text = '哈哈';
-  //       sendRequest(info, function(err, json){
-  //         detect(info, err, json, /还猜不猜嘛/);
-  //         info.text = '男的';
-  //         sendRequest(info, function(err, json){
-  //           detect(info, err, json, /是的/);
-  //           done();
-  //         });
-  //       });
-  //     });
-  //   });
+  //测试租车信息
+  describe('租车', function(){
+    it('should return 租车 msg', function(done){
+      info.type = 'text';
+      info.text = '租车';
+      sendRequest(info, function(err, json){
+        detect(info, err, json, /请发送你的位置/);
+        setTimeout(function(){
+          // 发送位置信息
+          info.type = 'location';
+          info.xPos = '30.649532345778';
+          info.yPos = '103.99671210534';
+          info.scale = '12';
+          info.label = '成都 某某地点';
+          sendRequest(info, function(err, json){
+            detect(info, err, json, /成都/);
+            done();
+          });
+        }, 2000); 
+      });
+    });
+  });
 
-  //   //检测game指令
-  //   it('should pass game-no-found', function(done){
-  //     info.text = 'game 1';
+  // describe('租车超时', function(){
+  //   it('should return 租车超时 msg', function(done){
+  //     info.type = 'text';
+  //     info.text = '租车';
   //     sendRequest(info, function(err, json){
-  //       detect(info, err, json, /游戏/);
-  //       info.text = '2';
-  //       sendRequest(info, function(err, json){
-  //         detect(info, err, json, /再猜/);
-  //         info.text = '3';
-  //         sendRequest(info, function(err, json){
-  //           detect(info, err, json, /再猜/);
-  //           info.text = '4';
-  //           sendRequest(info, function(err, json){
-  //             detect(info, err, json, /答案是/);
-  //             done();
-  //           });
-  //         });
-  //       });
-  //     });
-  //   });
-
-  //   //检测game指令
-  //   it('should return game-found msg', function(done){
-  //     info.text = 'game 1';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json, /游戏/);
-  //       info.text = '2';
-  //       sendRequest(info, function(err, json){
-  //         detect(info, err, json, /再猜/);
-  //         info.text = '3';
-  //         sendRequest(info, function(err, json){
-  //           detect(info, err, json, /再猜/);
-  //           info.text = '1';
-  //           sendRequest(info, function(err, json){
-  //             detect(info, err, json, /聪明/);
-  //             done();
-  //           });
-  //         });
-  //       });
-  //     });
-  //   });
-
-  //   //检测suggest_keyword指令
-  //   it('should return keyword correction accepted result.', function(done){
-  //     info.text = 's nde';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json,/拼写错误.*nodejs/);
-  //       //下次回复
-  //       info.text = 'y';
-  //       sendRequest(info, function(err, json){
-  //         detect(info, err, json, /百度搜索.*nodejs/);
-  //         done();
-  //       });
-  //     });
-  //   });
-
-  //   //检测suggest_keyword指令
-  //   it('should return refused keyword correction result.', function(done){
-  //     info.text = 's nde';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json,/拼写错误.*nodejs/);
-  //       //下次回复
-  //       info.text = 'n';
-  //       sendRequest(info, function(err, json){
-  //         detect(info, err, json, /百度搜索.*nde/);
-  //         done();
-  //       });
-  //     });
-  //   });
-
-  //   //检测search指令
-  //   it('should return search msg', function(done){
-  //     info.text = 's javascript';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json, /百度搜索.*javascript/);
-  //       done();
-  //     });
-  //   });
-
-  //   //检测timeout指令
-  //   it('should pass not timeout', function(done){
-  //     info.text = 'timeout';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json, /请等待/);
+  //       detect(info, err, json, /请发送你的位置/);
   //       setTimeout(function(){
-  //         info.text = 'Hehe...';
-  //         sendRequest(info, function(err, json){
-  //           detect(info, err, json, new RegExp('输入了: ' + info.text));
-  //           done();
-  //         });
-  //       }, 2000);
-  //     });
-  //   });
-
-  //   //检测timeout指令
-  //   it('should return timeout msg', function(done){
-  //     info.text = 'timeout';
-  //     sendRequest(info, function(err, json){
-  //       detect(info, err, json, /请等待/);
-  //       setTimeout(function(){
-  //         info.text = 'timeout ok';
+  //         // 发送位置信息
+  //         info.type = 'location';
+  //         info.xPos = '30.649532345778';
+  //         info.yPos = '103.99671210534';
+  //         info.scale = '12';
+  //         info.label = '成都 某某地点';
   //         sendRequest(info, function(err, json){
   //           detect(info, err, json, /超时/);
   //           done();
   //         });
-  //       }, 5100);
+  //       }, 30100); 
   //     });
   //   });
   // });
 
+  //测试租车信息
+  describe('停车', function(){
+    it('should return 停车 msg', function(done){
+      info.type = 'text';
+      info.text = '停车';
+      sendRequest(info, function(err, json){
+        detect(info, err, json, /请发送你的位置/);
+        setTimeout(function(){
+          // 发送位置信息
+          info.type = 'location';
+          info.xPos = '30.649532345778';
+          info.yPos = '103.99671210534';
+          info.scale = '12';
+          info.label = '成都 某某地点';
+          sendRequest(info, function(err, json){
+            detect(info, err, json, /成都/);
+            done();
+          });
+        }, 2000); 
+      });
+    });
+  });
 });
 

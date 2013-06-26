@@ -36,14 +36,14 @@ var request = require('request');
 // }
 
 // curl "http://api.map.baidu.com/telematics/v2/point?keyWord=晋吉北路&cityName=成都&ak=E082a470d4aa20ca369874f807d4ab5d"
-exports.geo2stop = function geo2stop(param, cb){
+exports.geo2stop = function geo2stop(param, kw, cb){
   var token = 'E082a470d4aa20ca369874f807d4ab5d';
   var options = {
     url: 'http://api.map.baidu.com/telematics/v2/local',
     qs: {
       location: [param.lng, param.lat].join(','),
       resType: 'json',
-      keyWord: '停车场',
+      keyWord: kw,
       output: 'json',
       ak: token
     }
