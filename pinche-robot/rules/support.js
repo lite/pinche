@@ -59,12 +59,12 @@ function parse_result(param, data){
   for(i=0; i<pointList.length; i++){
     data = pointList[i];
     var distance = distanceByLnglat(data.location.lng, data.location.lat, param.lng, param.lat);
-    params.push({
-      title: data.name,
-      description: "地址：" + data.address + "\n距离：" + distance + "米",
-      pic: 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0',
-      url: 'http://m.autohome.com.cn/brand/33/?search=1'
-    });
+    var item = {}
+    item.title = data.name;
+    item.description = "地址：" + data.address + "\n距离：" + distance + "米";
+    item.pic = 'http://mmsns.qpic.cn/mmsns/1QPBGwF70BeO3RVsMHK3YepkI2zcticXibKibYic0a49fxNHJD8zLa8S0A/0';
+    item.url = 'http://m.autohome.com.cn/brand/33/?search=1';
+    params.push(item);
   }
   return params;
 }
@@ -91,7 +91,8 @@ exports.geo2find = function geo2find(param, kw, cb){
     }
     var data = JSON.parse(body);
     if(data.pointList && data.pointList.length>=1){
-      var result = JSON.stringify(parse_result(param, data));
+      // var result = JSON.stringify(parse_result(param, data));
+      var result = parse_result(param, data);
       return cb(null, result);
     }
     return cb('geo2find found nth.');
